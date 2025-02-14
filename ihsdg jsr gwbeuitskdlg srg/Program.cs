@@ -12,8 +12,20 @@ namespace ihsdg_jsr_gwbeuitskdlg_srg
 
 			Beolvasas("karakterek.txt", karakterek);
 
-			Legerosebb(karakterek);
-		}
+			//2. feladat
+			(string, int, int) a = LegmagasabbEletEro(karakterek);
+            Console.WriteLine($"Legmagasabb életerővel rendelkező karakter neve: {a.Item1}, szintje: {a.Item2}, ereje: {a.Item3}");
+
+			//3.feladat
+			OsszAtlag(karakterek);
+
+            //4. feladat
+            Legerosebb(karakterek);
+
+            //5. feladat
+            Console.WriteLine($"Az első karakter ({karakterek[0].Nev}) ereje ({karakterek[0].Ero}) nagyobb-e, mint 50: ");
+            Console.WriteLine(Erosebbe(karakterek[0], 50));
+        }
 
 		static (string, int, int) LegmagasabbEletEro(List<Karakter> karakterek)
 		{
@@ -49,7 +61,7 @@ namespace ihsdg_jsr_gwbeuitskdlg_srg
 			Console.WriteLine("\nLegerősebb sorrendben");
 			for (int i = 0; i < rendezett.Count; i++)
 			{
-				Console.WriteLine($"{i}. {rendezett[i]}\n");
+				Console.WriteLine($"{i+1}. {rendezett[i]}\n");
 			}
 		}
 
@@ -57,6 +69,8 @@ namespace ihsdg_jsr_gwbeuitskdlg_srg
 		{
 			return (kar.Ero > ero);
 		}
+
+
 
 		static void Beolvasas(string file, List<Karakter> karakterek)
 		{
