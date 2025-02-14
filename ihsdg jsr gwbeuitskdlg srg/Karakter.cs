@@ -13,7 +13,7 @@ namespace ihsdg_jsr_gwbeuitskdlg_srg
 		private int ero;
 		private int szint;
 
-		public Karakter(string nev, int eletEro, int ero, int szint)
+		public Karakter(string nev, int szint, int eletEro, int ero)
 		{
 			Nev = nev;
 			EletEro = eletEro;
